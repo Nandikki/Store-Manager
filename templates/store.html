@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Script&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="/static/css/Black-Navbar.css">
+    <link rel="stylesheet" href="/static/css/Bootstrap-4---Product-List.css">
+    <link rel="stylesheet" href="/static/css/Login-Form-Clean.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background: rgb(13,110,253);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;border-style: none;padding-top: 0;padding-bottom: 10px;">
+        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item"><a class="nav-link active" href="store" style="color: var(--bs-btn-bg);">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="purchases" style="color: var(--bs-gray-100);">My Purchases</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+                <p class="ms-auto nav-item"><p  style="color: white; margin-bottom:0px; margin-bottom:auto">
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item"><span class="nav-link " style=" margin-left; color: var(--bs-btn-bg);">Hello, {{user.name}} </span></li>
+                    <li class="nav-item"><a class="nav-link" href="/" style="color: var(--bs-gray-100);">🔓</a></li>
+                </ul></p>
+            </div>
+        </div>
+    </nav>
+    {% for i in products %}
+    <form method="post" action="/buy/{{i.id}}" class=" d-inline-flex" style="width: auto;margin:16px 20%;">
+        <img src="{{i.img_url}}" class="img-fluid d-inline-flex"  height="80" style="margin-right: 8px;margin-left: 8px;width: 400px; height: 333px; {% if i.stock == 0 %} filter: grayscale(100%) {% endif %}">
+        <div style="margin-right: 8px;margin-bottom: 8px;height: 333px;">
+            <p class="d-flex" style="margin-bottom: -5px;font-size: 20px; margin-top: 16px"><strong>{{i.title}}</strong></p>
+            <p class="d-lg-flex justify-content-lg-start"><em>{{i.price}}€</em></p>
+            <p style="text-align: left;width: 344.913px;">{{i.description}}<br><button {% if i.stock == 0 %} disabled {% endif %} class="btn btn-primary" type="submit" style="margin-right: 0;margin-left: 0;width: 75.0375px;height: 39px;text-align: center;margin-top: 12px; {% if i.stock == 0 %} filter: grayscale(100%) {% endif %}">Buy</button><br></p>
+            <p class="d-lg-flex justify-content-lg-start"><em>In-Stock: {{i.stock}}.</em></p>
+        </div>
+    </form>
+    {% endfor %}
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store</title>
+    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Script&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="./static/css/Animated-Type-Heading.css">
+    <link rel="stylesheet" href="./static/css/Black-Navbar.css">
+    <link rel="stylesheet" href="./static/css/Bootstrap-4---Product-List.css">
+    <link rel="stylesheet" href="./static/css/Login-Form-Clean.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background: rgb(13,110,253);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;border-style: none;padding-top: 0;padding-bottom: 10px;">
+        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item"><a class="nav-link active" href="overview" style="color: var(--bs-btn-bg);">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clients_overview" style="color: var(--bs-gray-100);">Clients Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="suppliers_overview" style="color: var(--bs-gray-100);">Suppliers Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products_overview" style="color: var(--bs-gray-100);">Products Overview</a></li>
+                </ul>
+                <p class="ms-auto nav-item"><p  style="color: white; margin-bottom:0px; margin-bottom:auto">
+                <ul class="navbar-nav nav-right">
+                    <li class="nav-item"><span class="nav-link " style=" margin-left; color: var(--bs-btn-bg);">Hello, {{user.name}} </span></li>
+                    <li class="nav-item"><a class="nav-link" href="/" style="color: var(--bs-gray-100);">🔓</a></li>
+                </ul></p>
+            </div>
+        </div>
+    </nav>
+    <section style="margin-right: 20%;margin-left: 20%;margin-top: 5%;">
+        <div style="margin-right: 20px;margin-bottom: 20px;">
+            <h1>Admin Panel</h1>
+            <p>Total users: {{(t_clients + t_suppliers)}}</p>
+            <p>Clients: {{t_clients}}<br></p>
+            <p>Suppliers: {{t_suppliers}}<br></p>
+            <p>
+                Stock Status: {{stock_actual}} items ({{percent}}%)</p>
+            <p style="{% if understock %} color:red; font-weight: bold;{% endif %}">
+                {% if understock %}⚠️ The stock is below 10% of its capacity!{% endif %}</p>
+            <p style="{% if overstock %} color:blue; font-weight: bold;{% endif %}">
+                {% if overstock %}⚠️ The stock is over its capacity and you will not able to order new packages.{% endif %}</p>
+            <p style="{% if reachedstock %} color:blue; font-weight: bold;{% endif %}">
+                {% if reachedstock %}⚠️ The stock reached its max. capacity.{% endif %}</p>
+            <p>
+            <p>
+
+            </p>
+        </div>
+        <div>
+            <h3>Overview</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Total Revenue</th>
+                            <th>Total Fees</th>
+                            <th>Total Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{t_revenue}}</td>
+                            <td>{{t_fees}}<br></td>
+                            <td>{{t_profit}}<br></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./static/js/Animated-Type-Heading.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="text-start" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store</title>
+    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Script&amp;display=swap">
+    <link rel="stylesheet" href="./static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="./static/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body>
+    <section class="login-clean">
+        <h2 class="visually-hidden">Login Form</h2>
+        <form method="post" action="login">
+            <div class="illustration">
+                <h1 style="text-align: center;font-family: 'League Script', serif;font-weight: bold;color: var(--bs-blue);"><i class="icon ion-ios-cloud" style="color: var(--bs-blue);"></i>&nbsp;<br>Store</h1>
+                <p style="font-size: 16px;color: var(--bs-gray);">Welcome to Store!</p>
+            </div>
+            <div class="mb-3">
+                <p name="status" style="display: {% if status %} {% endif %} {% if not(status) %} none {% endif %}; color: {{color}}; font-size: 14px">{{message}}</p>
+            </div>
+            <div class="mb-3">
+                <p>Log-in with your e-mail</p><input class="form-control" type="email" name="email" placeholder="E-mail">
+            </div>
+            <div class="mb-3">
+                <p>Your password</p><input class="form-control" type="password" name="password" placeholder="Password">
+            </div><a class="forgot" href="#" style="color: var(--bs-blue);text-align: right;">Forgot your password?</a>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);">Log-in</button></div>
+            <a class="forgot" href="create-account" style="color: var(--bs-blue);">Not a member yet?&nbsp;<strong>Create an account!</strong><br></a>
+        </form>
+    </section>
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

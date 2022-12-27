@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Store</title>
+    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Script&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="./static/css/Animated-Type-Heading.css">
+    <link rel="stylesheet" href="./static/css/Black-Navbar.css">
+    <link rel="stylesheet" href="./static/css/Bootstrap-4---Product-List.css">
+    <link rel="stylesheet" href="./static/css/Login-Form-Clean.css">
+</head>
+
+<body>
+    <section class="login-clean">
+        <form method="post", action="create_product_func">
+            <div class="mb-3"><a class="forgot" href="#" style="text-align: left;"></a>
+                <p>Product's name</p><input class="form-control" type="text" name="title" placeholder="IPhone X S Quadra Resolution">
+            </div>
+            <div style="margin-bottom: 16px;">
+                <p>Product's description</p><input class="form-control" type="text" name="description" placeholder="">
+            </div>
+            <div class="mb-3">
+                <p>Product's base price (without fee)</p><input class="form-control" type="number" step="0.01" name="price" placeholder="970">
+                <div class="mb-3">
+                    <p>Product's supplier (ID)</p><input class="form-control" type="number" name="s_id" placeholder="2">
+                </div>
+            </div>
+            <div class="mb-3">
+                <p>Product's Image (url)</p><input class="form-control" type="text" name="img" placeholder="https://www.image.com/image.png">
+            </div>
+            <div class="mb-3">
+                <p>Warehouse Location (XYZ Format)</p><input class="form-control" type="text" name="location" placeholder="Z99">
+            </div>
+            <div style="margin-top: 16px;"></div><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);">Create product</button>
+        </form>
+    </section>
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./static/js/Animated-Type-Heading.js"></script>
+</body>
+
+</html>
